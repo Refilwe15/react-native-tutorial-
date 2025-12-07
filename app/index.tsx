@@ -1,7 +1,32 @@
+import { useEffect, useState } from "react";
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+//Hooks are functions in react that allow you to interact with the state  , life cycles and other react features that 
+//functional components do not have access to.
+
+// use state => state object in class components , for data inputs , data storage(temporart)
+//use effect => life cycle methods in class components , side effects , data fetching , subscriptions , manually changing the DOM in react web
 
 export default function Index() {
-  return (
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    //fetching data from an api
+    console.log("Username changed:", username);
+    
+},[username])
+
+useEffect(() => {
+
+  //add event listener
+
+  return () => {
+    // remove event listners
+    //removing : slow processing . since its running in background
+    //cleaning up
+    //ondestroy life cycle , unmount life cycle
+  }
+},[])
+
+return (
     <View style={styles.container}>
       {/* Image */}
       <Image
@@ -16,6 +41,7 @@ export default function Index() {
         style={styles.input}
         placeholder="Enter something..."
         placeholderTextColor="grey"
+        onChangeText={(text) => setUsername(text)}
       />
 
       {/* Button */}
