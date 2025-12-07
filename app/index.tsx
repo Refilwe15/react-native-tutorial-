@@ -1,15 +1,21 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
       {/* Image */}
-      {/* ScrollView can be used for scrollable content */}
       <Image
         source={{
           uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLat8bZvhXD3ChSXyzGsFVh6qgplm1KhYPKA&s",
         }}
         style={styles.image}
+      />
+
+      {/* Text Input */}
+      <TextInput
+        style={styles.input}
+        placeholder="Enter something..."
+        placeholderTextColor="grey"
       />
 
       {/* Button */}
@@ -33,6 +39,16 @@ const styles = StyleSheet.create({
     height: 200,
     marginBottom: 20,
     borderRadius: 10,
+  },
+
+  input: {
+    borderWidth: 1,
+    borderColor: "black",
+    color: "black",
+    padding: 10,
+    width: "80%",
+    borderRadius: 6,
+    marginBottom: 20,
   },
 
   button: {
